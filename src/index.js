@@ -3,16 +3,15 @@ try {
   const project =
     process.env.TS_NODE_PROJECT ||
     process.env._TS_PROJECT_PATH__ ||
-    './tsconfig.json';
-  require('ts-node').register({
+    "./tsconfig.json";
+  require("ts-node").register({
     project,
-    transpileOnly: true,
   });
   // opt-in tsconfig-paths config
   if (process.env.TS_CONFIG_PATHS) {
-    require('tsconfig-paths/register');
+    require("tsconfig-paths/register");
   }
 } catch (error) {
-  console.log('[ERROR] ' + error.message);
+  console.log("[ERROR] " + error.message);
   process.exit(1);
 }
